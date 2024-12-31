@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>convert seconds to time string
+        format hh:mm:ss using JavaScript
+    </title>
+</head>
+
+<body>
+    <h1 style="color: green">
+        GeeksforGeeks
+    </h1>
+
+    <b>
+        JavaScript seconds to time
+        string with format hh:mm:ss
+    </b>
+
+    <p>No. of secomds is: 3685</p>
+    <p>
+        Time in hh:mm:ss is:
+        <span class="output"></span>
+    </p>
+
+    <button onclick="convertSecondstoTime()">
+        Get time in hh:mm:ss
+    </button>
+
+    <script type="text/javascript">
+        function convertSecondstoTime() {
+            given_seconds = 3685;
+
+            hours = Math.floor(given_seconds / 3600);
+            minutes = Math.floor((given_seconds - (hours * 3600)) / 60);
+            seconds = given_seconds - (hours * 3600) - (minutes * 60);
+
+            timeString = hours.toString().padStart(2, '0') + ':' +
+                minutes.toString().padStart(2, '0') + ':' +
+                seconds.toString().padStart(2, '0');
+
+            document.querySelector('.output').textContent
+                = timeString;
+        }
+    </script>
+</body>
+
+</html>
